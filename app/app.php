@@ -1,6 +1,6 @@
 <?php
   require_once __DIR__."/../vendor/autoload.php";
-  require_once __DIR__."/../src/AnagramComparator.php";
+  require_once __DIR__."/../src/CoinCombo.php";
 
   $app = new Silex\Application();
   $app->register(new Silex\Provider\TwigServiceProvider(), array('twig.path' => __DIR__.'/../views'));
@@ -10,12 +10,10 @@
   });
 
   $app->post("/generate", function() use ($app) {
-    $word = $_POST['word'];
-    $words = $_POST['words'];
-    $words = explode(" ", $words);
-    $newAnagram = new AnagramComparator();
-    $anagrams = $newAnagram->testAnagram($word, $words);
-    return $app['twig']->render('generate.twig', array('word' => $word, 'words' => $words, 'anagrams' => $anagrams));
+    $cents = $_POST['cents'];
+    $newCombo = new CoinCombo();
+    $combo = $newCombo->combo($cents);
+    return $app['twig']->render('generate.twig', array('cents' => $cents, 'combo' => $combo));
   });
 
   return $app;

@@ -3,28 +3,21 @@
 <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="/css/styles.css">
-  <title>Anagram Comparator</title>
+  <title>Coin Combo</title>
 </head>
 <body>
   <div class="container">
-    <h1>Anagram Comparator</h1>
-
+    <h1>Coin Combo</h1>
+    <p>Coin Combo takes a given amount of cents and shows the smallest number of quarters, dimes, nickels, and pennies needed to make that change.</p>
   </div>
   <form class="center" action="/generate" method="post">
     <div class="row">
       <div class="form-group col-lg-4">
-        <label for="word">Enter word:</label>
-        <input class="wide-input" id="word" name="word" type="text" maxlength="200" required>
+        <label for="cents">Enter word:</label>
+        <input class="wide-input" id="cents" name="cents" type="text" maxlength="4" required>
       </div>
     </div>
-    <div class="row">
-      <div class="form-group col-lg-4">
-        <label for="words">Enter words to compare against:</label>
-        <input class="wide-input" id="words" name="words" type="text" maxlength="200" required>
-      </div>
-    </div>
-    </div>
-    <button type="submit" class="btn-primary">Test!</button>
+    <button type="submit" class="btn-primary">Make combo!</button>
   </form>
 </body>
 </html>
