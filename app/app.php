@@ -6,16 +6,16 @@
   $app->register(new Silex\Provider\TwigServiceProvider(), array('twig.path' => __DIR__.'/../views'));
 
   $app->get("/", function() use ($app) {
-    $temp = AnagramComparator->testAnagram("a", ["b"]);
-    var_dump($temp);
     return $app['twig']->render('home.twig');
   });
 
   $app->post("/generate", function() use ($app) {
-    $title = $_POST['title'];
-    $newTitleCase = new TitleCaseGenerator();
-    $generated = $newTitleCase->makeTitleCase($title);
-    return $app['twig']->render('generate.twig', array('title' => $title, 'generated' => $generated));
+    $word = $_POST['word'];
+    $words = $_POST['words'];
+    $words = explode(" ", $words);
+    $newAnagram = new AnagramComparator();
+    $anagrams = $newAnagram->testAnagram($word, $words);
+    return $app['twig']->render('generate.twig', array('word' => $word, 'words' => $words, 'anagrams' => $anagrams));
   });
 
   return $app;
