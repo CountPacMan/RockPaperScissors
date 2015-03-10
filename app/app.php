@@ -1,11 +1,13 @@
 <?php
   require_once __DIR__."/../vendor/autoload.php";
-  require_once __DIR__."/../src/TitleCaseGenerator.php";
+  require_once __DIR__."/../src/AnagramComparator.php";
 
   $app = new Silex\Application();
   $app->register(new Silex\Provider\TwigServiceProvider(), array('twig.path' => __DIR__.'/../views'));
 
   $app->get("/", function() use ($app) {
+    $temp = AnagramComparator->testAnagram("a", ["b"]);
+    var_dump($temp);
     return $app['twig']->render('home.twig');
   });
 
