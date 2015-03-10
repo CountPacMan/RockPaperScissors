@@ -12,7 +12,7 @@
   $app->post("/generate", function() use ($app) {
     $cents = $_POST['cents'];
     $newCombo = new CoinCombo();
-    $combo = $newCombo->combo($cents);
+    $combo = $newCombo->combine($cents);
     return $app['twig']->render('generate.twig', array('cents' => $cents, 'combo' => $combo));
   });
 
