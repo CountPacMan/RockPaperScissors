@@ -24,7 +24,7 @@
   $app->post("/computerGenerate", function() use ($app) {
     $player1 = $_POST['player1'];
     $newGame = new RockPaperScissors();
-    $player2 = $newGame->playComputer($player1);
+    $player2 = $newGame->playComputer();
     $result = $newGame->play($player1, $player2);
     return $app['twig']->render('generate.twig', array('player1' => $player1, 'player2' => $player2, 'result' => $result, 'computer' => true));
   });
