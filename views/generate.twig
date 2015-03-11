@@ -12,7 +12,7 @@
     <h5>Player 2 played {{ player2 }}</h5>
     <h4>{{ result }} won.</h4>
   </div>
-  <form class="center" action="/">
+  <form class="center" action={{ computer ? "/computer" : "/" }}>
     <button type="submit" class="btn-primary">Return Home</button>
   </form>
 </body>

@@ -13,7 +13,7 @@
     Paper v. Scissors = Scissors wins
     If both people choose the same thing, then it is a draw and nobody wins.</p>
   </div>
-  <form class="center" action="/generate" method="post">
+  <form class="center" action="/computerGenerate " method="post">
     <div class="row">
       <span><strong>Player 1</strong></span>
       <div class="radio">
@@ -26,25 +26,13 @@
         <label><input type="radio" name="player1" value="scissors">scissors</label>
       </div>
     </div>
-    <div class="row">
-      <span><strong>Player 2</strong></span>
-      <div class="radio">
-        <label><input type="radio" name="player2" value="rock">rock</label>
-      </div>
-      <div class="radio">
-        <label><input type="radio" name="player2" value="paper">paper</label>
-      </div>
-      <div class="radio">
-        <label><input type="radio" name="player2" value="scissors">scissors</label>
-      </div>
-    </div>
     <div>
       <button type="submit" class="btn-primary">Play!</button>
     </div>
   </form>
   <div>
-    <form class="center" action="/computer">
-      <button type="submit" class="btn-warning">Play against the Computer</button>
+    <form class="center" action="/">
+      <button type="submit" class="btn-warning">Play against another player</button>
     </form>
   </div>
 </body>

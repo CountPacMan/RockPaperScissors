@@ -14,7 +14,19 @@
     $player2 = $_POST['player2'];
     $newGame = new RockPaperScissors();
     $result = $newGame->play($player1, $player2);
-    return $app['twig']->render('generate.twig', array('player1' => $player1, 'player2' => $player2, 'result' => $result));
+    return $app['twig']->render('generate.twig', array('player1' => $player1, 'player2' => $player2, 'result' => $result, 'computer' => false));
+  });
+
+  $app->get("/computer", function() use ($app) {
+    return $app['twig']->render('computer.twig');
+  });
+
+  $app->post("/computerGenerate", function() use ($app) {
+    $player1 = $_POST['player1'];
+    $newGame = new RockPaperScissors();
+    $player2 = $newGame->playComputer($player1);
+    $result = $newGame->play($player1, $player2);
+    return $app['twig']->render('generate.twig', array('player1' => $player1, 'player2' => $player2, 'result' => $result, 'computer' => true));
   });
 
   return $app;

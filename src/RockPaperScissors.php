@@ -11,5 +11,20 @@
                 return "Nobody";
             }
         }
+
+        function playComputer($player1) {
+          //computer is player2
+          $player2_play = rand(1, 3);
+          $player2 = "";
+          if ($player2_play == 1) {
+            $player2 = "rock";
+          } elseif ($player2_play == 2) {
+            $player2 = "scissors";
+          } else {
+            $player2 = "paper";
+          }
+
+          return $player2;
+        }
     }
  ?>
