@@ -15,15 +15,27 @@
   </div>
   <form class="center" action="/generate" method="post">
     <div class="row">
-      <div class="form-group col-lg-4">
-        <label for="player1">Enter play for Player 1:</label>
-        <input class="wide-input" id="player1" name="player1" type="text" maxlength="10" required>
+      <span><strong>Player 1</strong></span>
+      <div class="radio">
+        <label><input type="radio" name="player1" value="rock">rock</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" name="player1" value="paper">paper</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" name="player1" value="scissors">scissors</label>
       </div>
     </div>
     <div class="row">
-      <div class="form-group col-lg-4">
-        <label for="player2">Enter play for Player 2:</label>
-        <input class="wide-input" id="player2" name="player2" type="text" maxlength="10" required>
+      <span><strong>Player 2</strong></span>
+      <div class="radio">
+        <label><input type="radio" name="player2" value="rock">rock</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" name="player2" value="paper">paper</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" name="player2" value="scissors">scissors</label>
       </div>
     </div>
     <button type="submit" class="btn-primary">Play!</button>
